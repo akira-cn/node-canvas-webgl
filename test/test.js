@@ -7,14 +7,17 @@ const width = 512,
 
 const canvas = createCanvas(width, height);
 
+const renderer = new Renderer(canvas, {contextType: 'webgl'});
+const gl = renderer.glRenderer.gl;
+
+canvas.width = 1024;
+gl.viewport(0, 0, canvas.width, canvas.height);
+
 const f = new Figure2D();
-f.rect(0, 0, 100, 100);
+f.rect(0, 0, 1000, 100);
 
 const m = new Mesh2D(f, canvas);
 m.setFill({color: 'red'});
-
-const renderer = new Renderer(canvas, {contextType: 'webgl'});
-// const gl = renderer.glRenderer.gl;
 
 const url = 'https://p0.ssl.qhimg.com/t01a72262146b87165f.png';
 
