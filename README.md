@@ -1,3 +1,3 @@
-# Sprite Template
+# node-canvas-webgl
 
-The standard project template.
+Integration of [node-canvas](https://github.com/Automattic/node-canvas) and [headless-gl](https://github.com/stackgl/headless-gl).
