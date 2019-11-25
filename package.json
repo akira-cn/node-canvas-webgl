@@ -1,0 +1,32 @@
+{
+  "name": "sprite-template",
+  "version": "0.0.1",
+  "description": "The standard project template.",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --env.server=examples --watch-poll",
+    "compile": "webpack --env.mode=production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "akira-cn",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.6",
+    "eslint": "^5.16.0",
+    "eslint-config-sprite": "^1.0.6",
+    "eslint-plugin-html": "^5.0.5",
+    "webpack": "^4.33.0",
+    "webpack-cli": "^3.3.4",
+    "webpack-dev-server": "^3.7.1"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.4.5"
+  }
+}
