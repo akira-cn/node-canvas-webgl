@@ -25,5 +25,5 @@ loadImage(url).then((image) => {
   const texture = renderer.createTexture(image);
   m.setTexture(texture);
   renderer.drawMeshes([m]);
-  fs.writeFileSync('snap.png', canvas.toBuffer());
+  fs.writeFileSync('./snapshot/snap.png', canvas.toBuffer());
 });

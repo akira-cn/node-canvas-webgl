@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="js/claygl.js"></script>
+</head>
+<body>
+  <canvas width="512" height="512"></canvas>
+  <script>
+    const canvas = document.querySelector('canvas');
+    const width = 512,
+      height = 512;
+
+    clay.application.create(canvas, {
+      width,
+      height,
+
+      init(app) {
+        // Create camera
+        this._camera = app.createCamera([0, 2, 5], [0, 0, 0]);
+
+        // Create a RED cube
+        this._cube = app.createCube({
+          color: '#f00',
+        });
+
+        // Create light
+        // this._mainLight = app.createDirectionalLight([-1, -1, -1]);
+        app.createAmbientLight('#fff', 1.0);
+        console.log(app.scene);
+      },
+      loop(app) {
+        this._cube.rotation.rotateY(app.frameTime / 1000);
+      },
+    });
+  </script>
+</body>
+</html>
