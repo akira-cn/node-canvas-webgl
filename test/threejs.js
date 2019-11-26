@@ -39,7 +39,7 @@ function update() {
     console.log(`add frame ${idx}`);
   }
   idx++;
-  if(idx < 500) {
+  if(idx < 300) {
     setTimeout(update, 16);
   }
 }

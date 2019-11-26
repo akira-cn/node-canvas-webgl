@@ -13,7 +13,6 @@ const encoder = new GIFEncoder(width, height);
 let idx = 0;
 
 // polyfill
-
 global.document = {
   createElement() {
     return createCanvas(300, 150);
