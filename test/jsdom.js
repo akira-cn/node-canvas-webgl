@@ -1,16 +1,15 @@
 const fs = require('fs');
 const {Renderer, Figure2D, Mesh2D} = require('@mesh.js/core');
-const {createCanvas, loadImage} = require('../lib');
+require('jsdom-global')();
+const {mockDOM} = require('../lib');
 
-const width = 512,
-  height = 512;
+mockDOM(window);
 
-const canvas = createCanvas(width, height);
+const canvas = document.createElement('canvas');
+canvas.width = 512;
+canvas.height = 512;
 
 const renderer = new Renderer(canvas, {contextType: 'webgl'});
-const gl = renderer.glRenderer.gl;
-
-gl.viewport(0, 0, canvas.width, canvas.height);
 
 const f = new Figure2D();
 f.rect(0, 0, 512, 512);
@@ -20,9 +19,8 @@ m.setFill({color: '#ddd'});
 
 const url = 'https://p0.ssl.qhimg.com/t01a72262146b87165f.png';
 
-loadImage(url).then((image) => {
-  const texture = renderer.createTexture(image);
+renderer.loadTexture(url).then((texture) => {
   m.setTexture(texture);
   renderer.drawMeshes([m]);
-  fs.writeFileSync('./snapshot/snap-spritejs.png', canvas.toBuffer());
+  fs.writeFileSync('./snapshot/snap-meshjs2.png', canvas.toBuffer());
 });

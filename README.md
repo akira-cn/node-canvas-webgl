@@ -193,9 +193,6 @@ const width = 512,
 const canvas = createCanvas(width, height);
 
 const renderer = new Renderer(canvas, {contextType: 'webgl'});
-const gl = renderer.glRenderer.gl;
-
-gl.viewport(0, 0, canvas.width, canvas.height);
 
 const f = new Figure2D();
 f.rect(0, 0, 512, 512);
