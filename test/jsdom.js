@@ -3,7 +3,7 @@ const {Renderer, Figure2D, Mesh2D} = require('@mesh.js/core');
 require('jsdom-global')();
 const {mockDOM} = require('../lib');
 
-mockDOM(window);
+mockDOM(window, {mockImage: true});
 
 const canvas = document.createElement('canvas');
 canvas.width = 512;
