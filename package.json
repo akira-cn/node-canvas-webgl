@@ -19,7 +19,7 @@
     "gifencoder": "^2.0.1",
     "jsdom": "^15.2.1",
     "jsdom-global": "^3.0.2",
-    "three": "^0.110.0"
+    "three": "^0.125.2"
   },
   "dependencies": {
     "canvas": "^2.6.0",
