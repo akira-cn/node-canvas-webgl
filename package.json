@@ -21,6 +21,10 @@
     "jsdom-global": "^3.0.2",
     "three": "^0.125.2"
   },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/akira-cn/node-canvas-webgl.git"
+  },
   "dependencies": {
     "canvas": "^2.6.0",
     "gl": "^6.0.0"
